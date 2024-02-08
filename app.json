@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Netflix",
+    "slug": "Netflix",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
