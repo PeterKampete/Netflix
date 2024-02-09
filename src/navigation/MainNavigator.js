@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Onboarding, Splash, UserProfiles } from '../screens';
 import { paths } from './paths';
+import BottomNavigator from './BottomNavigator';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,7 +12,7 @@ const MainNavigator = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName={paths.ONBOARDING}
+        initialRouteName={paths.BOTTOMNAVIGATOR}
       >
         <Stack.Screen name={paths.SPLASH} component={Splash} />
         <Stack.Screen name={paths.ONBOARDING} component={Onboarding} />
@@ -22,6 +23,7 @@ const MainNavigator = () => {
             animation: 'slide_from_right',
           }}
         />
+        <Stack.Screen name={paths.BOTTOMNAVIGATOR} component={BottomNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );
