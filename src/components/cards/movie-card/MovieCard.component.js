@@ -20,34 +20,52 @@ const MovieCard = ({
   width = DEVICE_WIDTH * 0.435,
   height = DEVICE_HEIGHT * 0.25,
   onPress,
+  fontSize = 16,
+  padding = 10,
 }) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <ImageBackground
         source={image}
-        borderRadius={16}
+        borderRadius={10}
         style={[styles.container, { width, height }]}
       >
         <View style={{ position: 'relative' }}>
-          <CustomBlurview style={styles.blurView}>
-            <View>
-              <Text style={styles.title}>{title}</Text>
-            </View>
-            <View
-              style={[
-                styles.flexRow,
-                { justifyContent: 'space-between', marginTop: 6 },
-              ]}
-            >
-              <View style={styles.flexRow}>
-                <AntDesign name='star' size={10} color={GOLD} />
-                <Text style={{ color: '#fff', fontSize: 12 }}>{rating}</Text>
+          <CustomBlurview>
+            <View style={[styles.blurView, { padding: fontSize / 1.6 }]}>
+              <View>
+                <Text style={[styles.title, { fontSize }]} numberOfLines={2}>{title}</Text>
               </View>
-              <View style={styles.flexRow}>
-                <Ionicons name='eye-sharp' size={16} color='#fff' />
-                <Text style={{ color: '#fff', fontSize: 12, marginLeft: 4 }}>
-                  {views} views
-                </Text>
+              <View
+                style={[
+                  styles.flexRow,
+                  { justifyContent: 'space-between', marginTop: 6 },
+                ]}
+              >
+                <View style={styles.flexRow}>
+                  <AntDesign name='star' size={fontSize / 1.6} color={GOLD} />
+                  <Text
+                    style={{
+                      color: '#fff',
+                      fontSize: fontSize / 1.3,
+                      marginLeft: fontSize / 3.2,
+                    }}
+                  >
+                    {rating}
+                  </Text>
+                </View>
+                <View style={styles.flexRow}>
+                  <Ionicons name='eye-sharp' size={fontSize} color='#fff' />
+                  <Text
+                    style={{
+                      color: '#fff',
+                      fontSize: fontSize / 1.3,
+                      marginLeft: fontSize / 3.2,
+                    }}
+                  >
+                    {views}
+                  </Text>
+                </View>
               </View>
             </View>
           </CustomBlurview>

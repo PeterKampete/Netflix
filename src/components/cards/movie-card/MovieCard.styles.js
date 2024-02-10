@@ -8,16 +8,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: 'bold',
-    fontSize: fonts._16
-  },
-  image: {
-    width: '100%',
-    height: DEVICE_HEIGHT * 0.15,
-    borderRadius: 10,
   },
   blurView: {
-    height: DEVICE_HEIGHT * 0.08,
-    padding: 10,
     borderTopRightRadius: 16,
     borderTopLeftRadius: 16,
     justifyContent: 'center',
