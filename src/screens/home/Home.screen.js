@@ -1,23 +1,29 @@
-import {
-  FlatList,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import React from 'react';
+import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import React, { useEffect, useRef } from 'react';
 import styles from './Home.styles';
 import { LIGHTGREY } from '../../constants/colors';
 import { posters } from '../../constants/dummy_data/posters';
 import AnimatedHorizontalScroll from '../../components/animated-horizontal-scroll/AnimatedHorizontalScroll.component';
 import ContinueWatchCard from '../../components/cards/continue-watch-card/ContinueWatchCard.component';
 import { MovieCard } from '../../components';
-import { DEVICE_HEIGHT } from '../../constants/sizes';
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../../constants/sizes';
 import { paths } from '../../navigation/paths';
+import { tvShows } from '../../constants/dummy_data/tvShows';
+import { genres } from '../../constants/dummy_data/genres';
+import { fonts } from '../../constants/fonts';
+import SwipeModal from '@birdwingo/react-native-swipe-modal';
+import { useGetMoviesQuery } from '../../redux/api/apiSlice';
 
 const Home = ({ navigation }) => {
+  const modalRef = useRef(null);
+  const showModal = () => modalRef.current?.show();
+
+  const { data, error, isLoading } = useGetMoviesQuery();
+
+  useEffect(() => {
+    console.log('data', data);
+  }, []);
+
   return (
     <View style={styles.container}>
       <ScrollView
@@ -40,7 +46,17 @@ const Home = ({ navigation }) => {
             }}
           >
             {['Movies', 'TV Shows', 'Categrories'].map((item) => (
-              <TouchableOpacity key={item} style={styles.topItem}>
+              <TouchableOpacity
+                key={item}
+                style={styles.topItem}
+                onPress={() => {
+                  if (item === 'Categrories') {
+                    console.log('is ');
+                    showModal();
+                    return;
+                  }
+                }}
+              >
                 <Text style={{ color: LIGHTGREY }}>{item}</Text>
               </TouchableOpacity>
             ))}
@@ -88,6 +104,62 @@ const Home = ({ navigation }) => {
           </View>
         </View>
       </ScrollView>
+      <SwipeModal
+        ref={modalRef}
+        // topOffset={DEVICE_HEIGHT * 0.2}
+        style={{
+          width: DEVICE_WIDTH,
+          height: DEVICE_HEIGHT,
+          paddingBottom: DEVICE_HEIGHT * 0.12,
+        }}
+        scrollEnabled
+      >
+        <View
+          style={{
+            alignItems: 'center',
+            gap: 34,
+          }}
+        >
+          <Text
+            style={[
+              styles.genreText,
+              { fontWeight: 'bold', fontSize: fonts._18, color: '#fff' },
+            ]}
+          >
+            Movies
+          </Text>
+          {genres.map((item) => (
+            <TouchableOpacity key={item.id}>
+              <Text style={styles.genreText}>{item.name}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+        <View
+          style={{
+            alignItems: 'center',
+            gap: 34,
+          }}
+        >
+          <Text
+            style={[
+              styles.genreText,
+              {
+                fontWeight: 'bold',
+                fontSize: fonts._18,
+                color: '#fff',
+                marginTop: 34,
+              },
+            ]}
+          >
+            TV Shows
+          </Text>
+          {tvShows.map((item) => (
+            <TouchableOpacity key={item.id}>
+              <Text style={styles.genreText}>{item.name}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      </SwipeModal>
     </View>
   );
 };

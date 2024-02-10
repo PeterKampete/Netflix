@@ -1,11 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { View, ImageBackground, Text } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { CustomButton, Login, Logo, Signup } from '../../components';
 import styles from './Onboarding.styles';
 import { DEVICE_HEIGHT } from '../../constants/sizes';
+import { useSelector } from 'react-redux';
 
-const Onboarding = ({navigation}) => {
+const Onboarding = ({ navigation }) => {
   const signupModalRef = useRef(null);
   const loginModalRef = useRef(null);
 
