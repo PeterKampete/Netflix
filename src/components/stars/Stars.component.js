@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { AntDesign } from '@expo/vector-icons';
+import { GOLD } from '../../constants/colors';
 
 const Stars = ({ rating }) => {
   return (
@@ -8,7 +9,7 @@ const Stars = ({ rating }) => {
       {Array(rating)
         .fill(0)
         .map((_, index) => (
-          <AntDesign name='star' size={10} color='#faab14' key={index} />
+          <AntDesign name='star' size={10} color={GOLD} key={index} />
         ))}
     </View>
   );

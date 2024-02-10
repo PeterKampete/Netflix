@@ -24,7 +24,7 @@ const gray = '#A0A0A0';
 const slideWidth = DEVICE_WIDTH * 0.55;
 const slideHeight = DEVICE_HEIGHT * 0.38;
 
-const Slide = ({ item, scrollOffset, index }) => {
+const Slide = ({ item, scrollOffset, index, onPress }) => {
   const animatedStyle = useAnimatedStyle(() => {
     const input = scrollOffset.value / slideWidth;
     const inputRange = [index - 1, index, index + 1];
@@ -50,7 +50,7 @@ const Slide = ({ item, scrollOffset, index }) => {
   });
 
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <Animated.View
         key={index}
         style={[
@@ -99,7 +99,7 @@ const Indicator = ({ scrollOffset, index }) => {
   );
 };
 
-const AnimatedHorizontalScroll = ({ data }) => {
+const AnimatedHorizontalScroll = ({ data, onPress }) => {
   const scrollOffset = useSharedValue(0);
 
   const scrollHandler = useAnimatedScrollHandler((event) => {
@@ -118,6 +118,7 @@ const AnimatedHorizontalScroll = ({ data }) => {
             index={index}
             item={item}
             scrollOffset={scrollOffset}
+            onPress={onPress}
           />
         )}
         scrollEventThrottle={1}

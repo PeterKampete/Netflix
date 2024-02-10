@@ -6,6 +6,7 @@ import Signup from './auth/Signup.component';
 import ContinueWatchCard from './cards/continue-watch-card/ContinueWatchCard.component';
 import MovieCard from './cards/movie-card/MovieCard.component';
 import Stars from './stars/Stars.component';
+import CustomBlurview from './custom-blurview/CustomBlurview.component';
 
 export {
   CustomButton,
@@ -15,5 +16,6 @@ export {
   Signup,
   ContinueWatchCard,
   MovieCard,
-  Stars
+  Stars,
+  CustomBlurview,
 };

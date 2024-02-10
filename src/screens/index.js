@@ -6,6 +6,7 @@ import Search from './search/Search.screen';
 import Discover from './discover/Discover.screen';
 import Downloads from './downloads/Downloads.screen';
 import Profile from './profile/Profile.screen';
+import MovieDetails from './movie-details/MovieDetails.screen';
 
 export {
   Splash,
@@ -16,4 +17,5 @@ export {
   Discover,
   Downloads,
   Profile,
+  MovieDetails,
 };

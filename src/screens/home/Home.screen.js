@@ -15,8 +15,9 @@ import AnimatedHorizontalScroll from '../../components/animated-horizontal-scrol
 import ContinueWatchCard from '../../components/cards/continue-watch-card/ContinueWatchCard.component';
 import { MovieCard } from '../../components';
 import { DEVICE_HEIGHT } from '../../constants/sizes';
+import { paths } from '../../navigation/paths';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ScrollView
@@ -46,7 +47,10 @@ const Home = () => {
           </ScrollView>
         </View>
         <View style={styles.posterHorizontalScroll}>
-          <AnimatedHorizontalScroll data={posters} />
+          <AnimatedHorizontalScroll
+            data={posters}
+            onPress={() => navigation.navigate(paths.MOVIEDETAILS)}
+          />
         </View>
         <View style={[styles.section, { paddingHorizontal: 18 }]}>
           <Text style={styles.heading}>Continue Watching</Text>
