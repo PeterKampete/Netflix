@@ -15,7 +15,7 @@ const Signup = forwardRef(
     const [secureTextEntry, setSecureTextEntry] = useState(true);
 
     return (
-      <SwipeModal ref={ref} fixedHeight style={styles.swipeModal} scrollEnabled>
+      <SwipeModal ref={ref} fixedHeight style={styles.swipeModal} scrollEnabled closeOnPressBack>
         <View style={{ flex: 1, paddingHorizontal: 30, paddingVertical: 10 }}>
           <Text style={styles.signupText}>Signup</Text>
           <Text style={{ color: '#fff', marginTop: 8 }}>

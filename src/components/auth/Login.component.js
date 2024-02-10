@@ -14,7 +14,7 @@ const Login = forwardRef(
     const [checked, setChecked] = useState(false);
 
     return (
-      <SwipeModal ref={ref} fixedHeight style={styles.swipeModal} scrollEnabled>
+      <SwipeModal ref={ref} fixedHeight style={styles.swipeModal} scrollEnabled closeOnPressBack>
         <View style={{ flex: 1, paddingHorizontal: 30, paddingVertical: 10 }}>
           <Text style={styles.signupText}>Welcom Back</Text>
           <Text style={{ color: '#fff', marginTop: 8 }}>
