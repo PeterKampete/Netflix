@@ -1,0 +1,17 @@
+export const tvShows = [
+  { id: 1, name: 'Crime TV Shows' },
+  { id: 2, name: "Kids' TV" },
+  { id: 3, name: 'Science & Nature TV' },
+  { id: 4, name: 'Teen TV Shows' },
+  { id: 5, name: 'Korean TV Shows' },
+  { id: 6, name: 'British TV Shows' },
+  { id: 7, name: 'Reality TV' },
+  { id: 8, name: 'TV Comedies' },
+  { id: 9, name: 'TV Dramas' },
+  { id: 10, name: 'TV Horror' },
+  //   { id: 11, name: 'Romantic TV Shows' },
+  //   { id: 12, name: 'Action & Adventure TV' },
+  //   { id: 13, name: 'Anime Series' },
+  //   { id: 14, name: 'Fantasy TV Shows' },
+  //   { id: 15, name: 'Documentaries' },
+];

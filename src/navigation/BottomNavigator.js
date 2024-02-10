@@ -20,6 +20,7 @@ const BottomNavigator = () => {
   return (
     <Tabs.Navigator
       screenOptions={{ headerShown: false }}
+      initialRouteName={paths.SEARCHSTACK}
       appearance={{
         whenActiveShow: TabElementDisplayOptions.ICON_ONLY,
         floating: true,

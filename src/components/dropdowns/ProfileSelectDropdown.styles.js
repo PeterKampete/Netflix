@@ -12,16 +12,15 @@ const styles = StyleSheet.create({
   },
   dropdownButton: {
     padding: 8,
-    borderRadius: 14,
     width: '100%',
-    height: DEVICE_HEIGHT * 0.085,
+    height: DEVICE_HEIGHT * 0.08,
     backgroundColor: 'rgba(255, 255, 255, 0.05)',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
   profile: {
-    width: DEVICE_WIDTH * 0.2,
+    width: DEVICE_WIDTH * 0.18,
     height: '100%',
     borderRadius: 10,
   },

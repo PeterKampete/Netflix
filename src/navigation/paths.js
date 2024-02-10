@@ -16,5 +16,10 @@ export const paths = {
   DISCOVERSTACK: 'discover-stack',
   DOWNLOADSSTACK: 'download-stack',
   PROFILESTACK: 'profile-stack',
-  MOVIEDETAILS: 'movie-details'
+  MOVIEDETAILS: 'movie-details',
+  MOVIES: 'movies',
+  CATEGORIES: 'categories',
+  MYLIST: 'my-list',
+  FAVORITES: 'favorites',
+  HELP: 'help',
 };

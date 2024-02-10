@@ -9,7 +9,17 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { DEVICE_HEIGHT, heights } from '../../constants/sizes';
 import styles from './CustomDrawerContent.styles';
 import { Ionicons } from '@expo/vector-icons';
-import { GREY } from '../../constants/colors';
+import { GREY, LIGHTGREY, MEDIUMGREY, RED } from '../../constants/colors';
+import { paths } from '../paths';
+
+const customDrawerItemStyles = {
+  borderRadius: 0,
+  width: '100%',
+  marginLeft: 0,
+  marginLeft: -10,
+  paddingLeft: 0,
+  fontSize: 15,
+};
 
 const CustomDrawerContent = (props) => {
   return (
@@ -22,6 +32,8 @@ const CustomDrawerContent = (props) => {
             borderTopRightRadius: 40,
             borderBottomRightRadius: 40,
             padding: 25,
+            borderRightWidth: 0.2,
+            borderRightColor: '#fff',
             // backgroundColor: 'black',
           }}
         >
@@ -29,16 +41,40 @@ const CustomDrawerContent = (props) => {
             <Logo />
           </View>
           <ProfileSelectDropdown
-            style={{ marginVertical: DEVICE_HEIGHT * 0.05 }}
+            style={{ marginVertical: DEVICE_HEIGHT * 0.05, marginBottom: DEVICE_HEIGHT * 0.03 }}
           />
           <DrawerItemList {...props} />
+          <View style={styles.hairline} />
           <DrawerItem
-            label='Help'
-            onPress={() => Linking.openURL('https://mywebsite.com/help')}
+            label='Get Help'
+            onPress={() => props.navigation.navigate(paths.HELP)}
+            icon={({ focused, color, size }) => (
+              <Ionicons
+                name='help'
+                size={size ? size : 24}
+                color={color}
+                style={{ left: 10 }}
+              />
+            )}
+            style={customDrawerItemStyles}
+            activeTintColor={LIGHTGREY}
+            inactiveTintColor={MEDIUMGREY}
+            activeBackgroundColor='transparent'
           />
           <DrawerItem
-            label='Help'
-            onPress={() => Linking.openURL('https://mywebsite.com/help')}
+            label='Logout'
+            icon={({ focused, color, size }) => (
+              <Ionicons
+                name='exit'
+                size={size ? size : 24}
+                color={color}
+                style={{ left: 10 }}
+              />
+            )}
+            style={customDrawerItemStyles}
+            activeTintColor='#fff'
+            inactiveTintColor='#fff'
+            activeBackgroundColor='transparent'
           />
         </View>
       </CustomBlurview>

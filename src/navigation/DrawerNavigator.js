@@ -4,8 +4,9 @@ import HomeStack from './stacks/HomeStack';
 import CustomDrawerContent from './custom-drawer-content/CustomDrawerContent';
 import { DEVICE_WIDTH } from '../constants/sizes';
 import { LIGHTGREY, MEDIUMGREY } from '../constants/colors';
-import { Ionicons, EvilIcons } from '@expo/vector-icons';
+import { Ionicons, EvilIcons, MaterialIcons } from '@expo/vector-icons';
 import SearchStack from './stacks/SearchStack';
+import { Movies, MyList } from '../screens';
 
 const Drawer = createDrawerNavigator();
 
@@ -18,6 +19,16 @@ const DrawerNavigator = () => {
         drawerStyle: {
           backgroundColor: 'transparent',
           width: DEVICE_WIDTH * 0.8,
+        },
+        drawerItemStyle: {
+          borderRadius: 0,
+          width: '100%',
+          marginLeft: 0,
+        },
+        drawerLabelStyle: {
+          marginLeft: -10,
+          paddingLeft: 0,
+          fontSize: 15,
         },
         drawerActiveTintColor: LIGHTGREY,
         drawerInactiveTintColor: MEDIUMGREY,
@@ -44,6 +55,50 @@ const DrawerNavigator = () => {
           ),
         }}
         component={SearchStack}
+      />
+      <Drawer.Screen
+        name={paths.MOVIES}
+        options={{
+          title: 'Movie Library',
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name='tv-outline' size={size ? size : 24} color={color} />
+          ),
+        }}
+        component={Movies}
+      />
+      <Drawer.Screen
+        name={paths.CATEGORIES}
+        options={{
+          title: 'Categories',
+          drawerIcon: ({ color, size }) => (
+            <MaterialIcons
+              name='category'
+              size={size ? size : 24}
+              color={color}
+            />
+          ),
+        }}
+        component={Movies}
+      />
+      <Drawer.Screen
+        name={paths.MYLIST}
+        options={{
+          title: 'My List',
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name='list' size={size ? size : 24} color={color} />
+          ),
+        }}
+        component={MyList}
+      />
+      <Drawer.Screen
+        name={paths.FAVORITES}
+        options={{
+          title: 'Favorites',
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name='heart-outline' size={size ? size : 24} color={color} />
+          ),
+        }}
+        component={MyList}
       />
     </Drawer.Navigator>
   );
