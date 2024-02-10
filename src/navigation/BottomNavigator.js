@@ -20,6 +20,7 @@ const BottomNavigator = () => {
   return (
     <Tabs.Navigator
       screenOptions={{ headerShown: false }}
+      initialRouteName={paths.SEARCHSTACK}
       appearance={{
         whenActiveShow: TabElementDisplayOptions.ICON_ONLY,
         floating: true,
@@ -32,7 +33,7 @@ const BottomNavigator = () => {
         // inactiveTintColor: GREY,
         activeBackgroundColor: RED,
       }}
-      backBehavior='initialRoute'
+      // backBehavior='initialRoute'
     >
       <Tabs.Screen
         name={paths.DRAWERNAVIGATOR}

@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './MovieDetails.styles';
-import { Ionicons, AntDesign } from '@expo/vector-icons';
+import { Ionicons, AntDesign, Entypo } from '@expo/vector-icons';
 import SwipeModal from '@birdwingo/react-native-swipe-modal';
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../../constants/sizes';
 import { CustomBlurview, MovieCard } from '../../components';
@@ -55,11 +55,7 @@ const MovieDetails = ({ navigation }) => {
           bg='rgba(0,0,0,0.2)'
           style={{ flex: 1 }}
         >
-          <CustomBlurview
-            blurType='dark'
-            blurAmount={20}
-            style={{ flex: 1 }}
-          >
+          <CustomBlurview blurType='dark' blurAmount={20} style={{ flex: 1 }}>
             <View style={styles.blurView}>
               <View>
                 <Text style={styles.title}>Venom</Text>
@@ -100,9 +96,10 @@ const MovieDetails = ({ navigation }) => {
                   <View
                     style={[
                       styles.flexDetails,
-                      { marginVertical: 0, gap: 10, width: 'auto' },
+                      { marginVertical: 0, gap: 30, width: 'auto' },
                     ]}
                   >
+                    <Entypo name='add-to-list' size={24} color='#fff' />
                     <Ionicons name='share-outline' size={24} color='#fff' />
                   </View>
                 </View>

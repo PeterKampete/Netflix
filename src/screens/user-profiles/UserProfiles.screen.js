@@ -13,8 +13,9 @@ import { fonts } from '../../constants/fonts';
 import { profiles } from '../../constants/dummy_data/profiles';
 import UserProfile from '../../components/user-profile/UserProfile.component';
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../../constants/sizes';
+import { paths } from '../../navigation/paths';
 
-const UserProfiles = () => {
+const UserProfiles = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.logo}>
@@ -67,6 +68,7 @@ const UserProfiles = () => {
                 isActive={item.isActive}
                 image={item.image}
                 width='47%'
+                onPress={() => navigation.navigate(paths.BOTTOMNAVIGATOR)}
               />
             )}
           />

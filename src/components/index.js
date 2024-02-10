@@ -7,6 +7,8 @@ import ContinueWatchCard from './cards/continue-watch-card/ContinueWatchCard.com
 import MovieCard from './cards/movie-card/MovieCard.component';
 import Stars from './stars/Stars.component';
 import CustomBlurview from './custom-blurview/CustomBlurview.component';
+import ProfileSelectDropdown from './dropdowns/ProfileSelectDropdown.component';
+import SearchedMovieCard from './cards/searched-movie-card/SearchedMovieCard.component';
 
 export {
   CustomButton,
@@ -18,4 +20,6 @@ export {
   MovieCard,
   Stars,
   CustomBlurview,
+  ProfileSelectDropdown,
+  SearchedMovieCard,
 };

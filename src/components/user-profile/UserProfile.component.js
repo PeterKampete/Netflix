@@ -20,11 +20,13 @@ const UserProfile = ({
   children,
   borderWidth,
   borderColor,
+  onPress,
   ...props
 }) => {
   return (
     <TouchableOpacity
       style={[styles.container, { width, height, borderWidth }]}
+      onPress={onPress}
     >
       <ImageBackground
         source={image}
