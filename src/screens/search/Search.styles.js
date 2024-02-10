@@ -21,6 +21,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: LIGHTGREY,
   },
+  sectionHeading: {
+    fontWeight: 'bold',
+    fontSize: fonts._18,
+    marginBottom: 13,
+  },
 });
 
 export default styles;

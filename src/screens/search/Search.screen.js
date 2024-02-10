@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import React, { useRef } from 'react';
 import styles from './Search.styles';
-import { CustomInput, SearchedMovieCard } from '../../components';
+import { CustomInput, MovieCard, SearchedMovieCard } from '../../components';
 import { Ionicons } from '@expo/vector-icons';
 import { GREY } from '../../constants/colors';
 import { posters } from '../../constants/dummy_data/posters';
@@ -45,7 +45,7 @@ const Search = ({ navigation }) => {
       </View>
       <View style={{ flex: 1 }}>
         <FlatList
-          data={profiles}
+          data={profiles.slice(0, 2)}
           contentContainerStyle={{
             gap: 14,
             paddingBottom: DEVICE_HEIGHT * 0.09,
@@ -58,6 +58,62 @@ const Search = ({ navigation }) => {
               onPress={() => navigation.navigate(paths.MOVIEDETAILS)}
             />
           )}
+          ListFooterComponent={
+            <View style={{ gap: 20 }}>
+              <View>
+                <Text style={[styles.sectionHeading, { marginLeft: 18 }]}>
+                  Popular Movies
+                </Text>
+                <ScrollView
+                  horizontal
+                  showsHorizontalScrollIndicator={false}
+                  contentContainerStyle={{
+                    gap: 16,
+                    paddingRight: 10,
+                    paddingLeft: 20,
+                  }}
+                >
+                  {posters.map((item) => (
+                    <MovieCard
+                      image={item.image}
+                      title='Overkill'
+                      rating={4.3}
+                      key={item.id}
+                      width={DEVICE_WIDTH * 0.33}
+                      height={DEVICE_HEIGHT * 0.2}
+                      fontSize={14}
+                    />
+                  ))}
+                </ScrollView>
+              </View>
+              <View>
+                <Text style={[styles.sectionHeading, { marginLeft: 18 }]}>
+                  Popular Movies
+                </Text>
+                <ScrollView
+                  horizontal
+                  showsHorizontalScrollIndicator={false}
+                  contentContainerStyle={{
+                    gap: 16,
+                    paddingRight: 10,
+                    paddingLeft: 20,
+                  }}
+                >
+                  {posters.map((item) => (
+                    <MovieCard
+                      image={item.image}
+                      title='Overkill'
+                      rating={4.3}
+                      key={item.id}
+                      width={DEVICE_WIDTH * 0.33}
+                      height={DEVICE_HEIGHT * 0.2}
+                      fontSize={14}
+                    />
+                  ))}
+                </ScrollView>
+              </View>
+            </View>
+          }
         />
       </View>
       <SwipeModal
@@ -86,9 +142,7 @@ const Search = ({ navigation }) => {
           </Text>
           {genres.map((item) => (
             <TouchableOpacity key={item.id}>
-              <Text style={styles.text}>
-                {item.name}
-              </Text>
+              <Text style={styles.text}>{item.name}</Text>
             </TouchableOpacity>
           ))}
         </View>
@@ -113,9 +167,7 @@ const Search = ({ navigation }) => {
           </Text>
           {tvShows.map((item) => (
             <TouchableOpacity key={item.id}>
-              <Text style={styles.text} >
-                {item.name}
-              </Text>
+              <Text style={styles.text}>{item.name}</Text>
             </TouchableOpacity>
           ))}
         </View>

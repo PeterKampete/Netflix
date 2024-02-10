@@ -37,6 +37,11 @@ const styles = StyleSheet.create({
   section: {
     marginBottom: DEVICE_HEIGHT * 0.03,
   },
+  heading: {
+    fontWeight: 'bold',
+    fontSize: fonts._18,
+    marginBottom: 13
+  },
 });
 
 export default styles;
