@@ -32,7 +32,7 @@ const BottomNavigator = () => {
         // inactiveTintColor: GREY,
         activeBackgroundColor: RED,
       }}
-      backBehavior='initialRoute'
+      // backBehavior='initialRoute'
     >
       <Tabs.Screen
         name={paths.DRAWERNAVIGATOR}

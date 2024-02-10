@@ -12,7 +12,7 @@ const MainNavigator = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName={paths.MOVIEDETAILS}
+        initialRouteName={paths.BOTTOMNAVIGATOR}
       >
         <Stack.Screen name={paths.SPLASH} component={Splash} />
         <Stack.Screen name={paths.ONBOARDING} component={Onboarding} />

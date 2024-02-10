@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     borderRadius: 17,
     paddingHorizontal: 16,
   },
-  name: { fontWeight: 'bold', fontSize: 13 },
+  name: { fontWeight: 'bold', fontSize: 13, color: '#000' },
   dot: {
     width: 8,
     height: 8,
