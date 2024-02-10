@@ -64,7 +64,7 @@ const BottomNavigator = () => {
           ),
         }}
       />
-      {/* 
+
       <Tabs.Screen
         name={paths.DISCOVERSTACK}
         component={DiscoverStack}
@@ -78,7 +78,7 @@ const BottomNavigator = () => {
             />
           ),
         }}
-      /> */}
+      />
       <Tabs.Screen
         name={paths.DOWNLOADSSTACK}
         component={DownloadsStack}
