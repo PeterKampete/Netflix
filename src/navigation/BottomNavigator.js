@@ -24,8 +24,9 @@ const BottomNavigator = () => {
       appearance={{
         whenActiveShow: TabElementDisplayOptions.ICON_ONLY,
         floating: true,
-        tabBarBackground: 'rgba(255,255,255,0.07)',
+        tabBarBackground: 'rgba(255,255,255,0.06)',
         dotSize: DotSize.SMALL,
+        shadow: true,
       }}
       tabBarOptions={{
         activeTintColor: '#fff',
@@ -41,7 +42,11 @@ const BottomNavigator = () => {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ focused, color, size }) => (
-            <Ionicons name='home' size={size} color={focused ? color : '#fff'} />
+            <Ionicons
+              name='home'
+              size={size}
+              color={focused ? color : '#fff'}
+            />
           ),
         }}
       />
@@ -59,7 +64,7 @@ const BottomNavigator = () => {
           ),
         }}
       />
-{/* 
+      {/* 
       <Tabs.Screen
         name={paths.DISCOVERSTACK}
         component={DiscoverStack}

@@ -6,7 +6,7 @@ import {
 import React from 'react';
 import { CustomBlurview, Logo, ProfileSelectDropdown } from '../../components';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
-import { DEVICE_HEIGHT, heights } from '../../constants/sizes';
+import { DEVICE_HEIGHT, DEVICE_WIDTH, heights } from '../../constants/sizes';
 import styles from './CustomDrawerContent.styles';
 import { Ionicons } from '@expo/vector-icons';
 import { GREY, LIGHTGREY, MEDIUMGREY, RED } from '../../constants/colors';
@@ -24,7 +24,7 @@ const customDrawerItemStyles = {
 const CustomDrawerContent = (props) => {
   return (
     <DrawerContentScrollView {...props}>
-      <CustomBlurview blurAmount={22}>
+      <CustomBlurview blurAmount={50}>
         <View
           style={{
             height: DEVICE_HEIGHT,
@@ -34,7 +34,7 @@ const CustomDrawerContent = (props) => {
             padding: 25,
             borderRightWidth: 0.2,
             borderRightColor: '#fff',
-            // backgroundColor: 'black',
+            width: DEVICE_WIDTH * 0.8
           }}
         >
           <View style={{ height: heights.small, width: '45%' }}>

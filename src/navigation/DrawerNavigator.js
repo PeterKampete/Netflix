@@ -19,6 +19,9 @@ const DrawerNavigator = () => {
         drawerStyle: {
           backgroundColor: 'transparent',
           width: DEVICE_WIDTH * 0.8,
+          borderTopRightRadius: 40,
+          borderBottomRightRadius: 40,
+          zIndex: 1
         },
         drawerItemStyle: {
           borderRadius: 0,
@@ -95,7 +98,11 @@ const DrawerNavigator = () => {
         options={{
           title: 'Favorites',
           drawerIcon: ({ color, size }) => (
-            <Ionicons name='heart-outline' size={size ? size : 24} color={color} />
+            <Ionicons
+              name='heart-outline'
+              size={size ? size : 24}
+              color={color}
+            />
           ),
         }}
         component={MyList}
