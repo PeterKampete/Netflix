@@ -6,7 +6,7 @@ import { DEVICE_WIDTH } from '../constants/sizes';
 import { LIGHTGREY, MEDIUMGREY } from '../constants/colors';
 import { Ionicons, EvilIcons, MaterialIcons } from '@expo/vector-icons';
 import SearchStack from './stacks/SearchStack';
-import { Movies, Music, MyList } from '../screens';
+import { Categories, Movies, Music, MyList } from '../screens';
 
 const Drawer = createDrawerNavigator();
 
@@ -81,7 +81,7 @@ const DrawerNavigator = () => {
             />
           ),
         }}
-        component={Movies}
+        component={Categories}
       />
       <Drawer.Screen
         name={paths.MYLIST}

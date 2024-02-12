@@ -4,7 +4,7 @@ import { LIGHTGREY } from '../../constants/colors';
 import { fonts } from '../../constants/fonts';
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#000', paddingVertical: 18 },
+  container: { flex: 1, backgroundColor: '#000',},
   logo: {
     width: DEVICE_WIDTH * 0.09,
     height: DEVICE_HEIGHT * 0.09,

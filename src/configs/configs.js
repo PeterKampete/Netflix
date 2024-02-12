@@ -8,6 +8,6 @@ export const URLS = {
     login: '/auth/login',
   },
   movies: {
-    getAll: `/3/movie/11`,
+    getAll: `/3/movie/13`,
   },
 };

@@ -12,17 +12,16 @@ import { tvShows } from '../../constants/dummy_data/tvShows';
 import { genres } from '../../constants/dummy_data/genres';
 import { fonts } from '../../constants/fonts';
 import SwipeModal from '@birdwingo/react-native-swipe-modal';
-import { useGetMoviesQuery } from '../../redux/api/apiSlice';
+import { useGetMoviesQuery } from '../../redux/api/moviesSlice';
+import axios from 'axios';
+import { TMDB_API_ACCESS_TOKEN } from '@env';
 
 const Home = ({ navigation }) => {
   const modalRef = useRef(null);
   const showModal = () => modalRef.current?.show();
 
-  const { data, error, isLoading } = useGetMoviesQuery();
-
-  useEffect(() => {
-    console.log('data', data);
-  }, []);
+  const { data, error, isLoading, refetch } = useGetMoviesQuery();
+  console.log('dta', data?.backdrop_path);
 
   return (
     <View style={styles.container}>
@@ -30,12 +29,15 @@ const Home = ({ navigation }) => {
         contentContainerStyle={{ paddingBottom: DEVICE_HEIGHT * 0.06 }}
       >
         <View style={[styles.flexRow, { paddingHorizontal: 14 }]}>
-          <View style={styles.logo}>
+          <TouchableOpacity
+            onPress={() => navigation.toggleDrawer()}
+            style={styles.logo}
+          >
             <Image
               source={require('../../assets/images/logo2.png')}
               style={{ width: '100%', height: '100%', resizeMode: 'contain' }}
             />
-          </View>
+          </TouchableOpacity>
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -71,7 +73,7 @@ const Home = ({ navigation }) => {
         <View style={[styles.section, { paddingHorizontal: 18 }]}>
           <Text style={styles.heading}>Continue Watching</Text>
           <View style={[styles.flexRow, { justifyContent: 'space-between' }]}>
-            <ContinueWatchCard image={posters[4].image} title='Depression' />
+            <ContinueWatchCard image={posters[4].image} title='Depression'  />
             <ContinueWatchCard
               image={posters[3].image}
               title='Behind the smiles'
@@ -98,6 +100,7 @@ const Home = ({ navigation }) => {
                   title='Overkill'
                   rating={4.3}
                   key={item.id}
+                  onPress={() => navigation.navigate(paths.MOVIEDETAILS)}
                 />
               ))}
             </ScrollView>

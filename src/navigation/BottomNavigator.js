@@ -33,6 +33,7 @@ const BottomNavigator = () => {
         // inactiveTintColor: GREY,
         activeBackgroundColor: RED,
       }}
+      initialRouteName={paths.DRAWERNAVIGATOR}
       // backBehavior='initialRoute'
     >
       <Tabs.Screen
@@ -42,7 +43,7 @@ const BottomNavigator = () => {
           tabBarLabel: 'Home',
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons
-              name='home'
+              name={focused ? 'home' : 'home-outline'}
               size={size}
               color={focused ? color : '#fff'}
             />
@@ -56,7 +57,7 @@ const BottomNavigator = () => {
           tabBarLabel: 'Search',
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons
-              name='search'
+              name={focused ? 'search' : 'search-outline'}
               size={size}
               color={focused ? color : '#fff'}
             />
@@ -71,7 +72,7 @@ const BottomNavigator = () => {
           tabBarLabel: 'Discover',
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons
-              name='compass'
+              name={focused ? 'compass' : 'compass-outline'}
               size={size}
               color={focused ? color : '#fff'}
             />
@@ -85,7 +86,7 @@ const BottomNavigator = () => {
           tabBarLabel: 'Downloads',
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons
-              name='download'
+              name={focused ? 'download' : 'download-outline'}
               size={size}
               color={focused ? color : '#fff'}
             />
@@ -99,7 +100,7 @@ const BottomNavigator = () => {
           tabBarLabel: 'Profile',
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons
-              name='person'
+              name={focused ? 'person' : 'person-outline'}
               size={size}
               color={focused ? color : '#fff'}
             />

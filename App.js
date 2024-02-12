@@ -9,14 +9,14 @@ import store, { persistor } from './src/redux/store';
 const App = () => {
   return (
     <Provider store={store}>
-      <PersistGate
+      {/* <PersistGate
         loading={<Text style={{ padding: 20 }}>Loading persisted data...</Text>}
         persistor={persistor}
-      >
-        <GestureHandlerRootView style={{ flex: 1 }}>
-          <MainNavigator />
-        </GestureHandlerRootView>
-      </PersistGate>
+      > */}
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <MainNavigator />
+      </GestureHandlerRootView>
+      {/* </PersistGate> */}
     </Provider>
   );
 };
