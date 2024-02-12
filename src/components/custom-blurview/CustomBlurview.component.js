@@ -6,7 +6,7 @@ const CustomBlurview = ({ children, style, blurType = 'dark', ...props }) => {
   return (
     <BlurView
       blurType={blurType}
-      blurAmount={2}
+      blurAmount={50}
       reducedTransparencyFallbackColor='white'
       overlayColor=''
       style={style}

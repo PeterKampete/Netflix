@@ -1,5 +1,6 @@
 import {
   FlatList,
+  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
@@ -26,7 +27,7 @@ const Discover = ({ navigation }) => {
   const showModal = () => modalRef.current?.show();
   const hideModal = () => modalRef.current?.hide();
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <CustomInput
         placeholder='Search movie, show or genre'
         leftIcon={() => <Ionicons name='search' size={20} color={GREY} />}
@@ -67,7 +68,7 @@ const Discover = ({ navigation }) => {
           )}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

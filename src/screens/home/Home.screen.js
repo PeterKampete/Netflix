@@ -1,4 +1,4 @@
-import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import React, { useEffect, useRef } from 'react';
 import styles from './Home.styles';
 import { LIGHTGREY } from '../../constants/colors';
@@ -24,7 +24,7 @@ const Home = ({ navigation }) => {
   console.log('dta', data?.backdrop_path);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView
         contentContainerStyle={{ paddingBottom: DEVICE_HEIGHT * 0.06 }}
       >
@@ -163,7 +163,7 @@ const Home = ({ navigation }) => {
           ))}
         </View>
       </SwipeModal>
-    </View>
+    </SafeAreaView>
   );
 };
 

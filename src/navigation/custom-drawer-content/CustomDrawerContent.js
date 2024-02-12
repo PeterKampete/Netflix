@@ -24,33 +24,43 @@ const customDrawerItemStyles = {
 const CustomDrawerContent = (props) => {
   return (
     <DrawerContentScrollView {...props}>
-      <CustomBlurview blurAmount={50}>
+       <Image
+        key={'blurryImage'}
+        source={{ uri: 'https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&height=900&width=1600&fit=bounds' }}
+        style={styles.absoluteImage}
+      />
+      <CustomBlurview
+        blurAmount={10}
+      >
         <View
           style={{
             height: DEVICE_HEIGHT,
-            justifyContent: 'flex-start',
+            justifyContent: "flex-start",
             borderTopRightRadius: 40,
             borderBottomRightRadius: 40,
             padding: 25,
             borderRightWidth: 0.2,
-            borderRightColor: '#fff',
-            width: DEVICE_WIDTH * 0.8
+            borderRightColor: "#fff",
+            width: DEVICE_WIDTH * 0.8,
           }}
         >
-          <View style={{ height: heights.small, width: '45%' }}>
+          <View style={{ height: heights.small, width: "45%" }}>
             <Logo />
           </View>
           <ProfileSelectDropdown
-            style={{ marginVertical: DEVICE_HEIGHT * 0.05, marginBottom: DEVICE_HEIGHT * 0.03 }}
+            style={{
+              marginVertical: DEVICE_HEIGHT * 0.05,
+              marginBottom: DEVICE_HEIGHT * 0.03,
+            }}
           />
           <DrawerItemList {...props} />
           <View style={styles.hairline} />
           <DrawerItem
-            label='Get Help'
+            label="Get Help"
             onPress={() => props.navigation.navigate(paths.HELP)}
             icon={({ focused, color, size }) => (
               <Ionicons
-                name='help'
+                name="help"
                 size={size ? size : 24}
                 color={color}
                 style={{ left: 10 }}
@@ -59,22 +69,22 @@ const CustomDrawerContent = (props) => {
             style={customDrawerItemStyles}
             activeTintColor={LIGHTGREY}
             inactiveTintColor={MEDIUMGREY}
-            activeBackgroundColor='transparent'
+            activeBackgroundColor="transparent"
           />
           <DrawerItem
-            label='Logout'
+            label="Logout"
             icon={({ focused, color, size }) => (
               <Ionicons
-                name='exit'
+                name="exit"
                 size={size ? size : 24}
                 color={color}
                 style={{ left: 10 }}
               />
             )}
             style={customDrawerItemStyles}
-            activeTintColor='#fff'
-            inactiveTintColor='#fff'
-            activeBackgroundColor='transparent'
+            activeTintColor="#fff"
+            inactiveTintColor="#fff"
+            activeBackgroundColor="transparent"
           />
         </View>
       </CustomBlurview>
