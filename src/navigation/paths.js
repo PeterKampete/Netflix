@@ -22,4 +22,5 @@ export const paths = {
   MYLIST: 'my-list',
   FAVORITES: 'favorites',
   HELP: 'help',
+  MUSIC: 'music'
 };

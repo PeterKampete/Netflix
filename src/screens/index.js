@@ -14,6 +14,7 @@ import MyList from './my-list/MyList.screen';
 import Movies from './movies/Movies.screen';
 import Help from './help/Help.screen';
 import Favorites from './favorites/Favorites.screen';
+import Music from './music/Music.screen';
 
 export {
   Splash,
@@ -32,4 +33,5 @@ export {
   Movies,
   Help,
   Favorites,
+  Music,
 };

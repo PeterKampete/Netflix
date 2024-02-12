@@ -4,7 +4,7 @@ import { LIGHTGREY } from '../../constants/colors';
 import { fonts } from '../../constants/fonts';
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#000', paddingVertical: 18 },
+  container: { flex: 1, backgroundColor: '#000',},
   logo: {
     width: DEVICE_WIDTH * 0.09,
     height: DEVICE_HEIGHT * 0.09,
@@ -26,13 +26,13 @@ const styles = StyleSheet.create({
   },
   posterHorizontalScroll: {
     height: DEVICE_HEIGHT * 0.4,
-    marginBottom: DEVICE_HEIGHT * 0.03
+    marginBottom: DEVICE_HEIGHT * 0.03,
     // backgroundColor: 'red',
   },
   heading: {
     fontWeight: 'bold',
     fontSize: fonts._18,
-    marginBottom: 13
+    marginBottom: 13,
   },
   section: {
     marginBottom: DEVICE_HEIGHT * 0.03,
@@ -40,7 +40,13 @@ const styles = StyleSheet.create({
   heading: {
     fontWeight: 'bold',
     fontSize: fonts._18,
-    marginBottom: 13
+    marginBottom: 13,
+  },
+  genreText: {
+    fontWeight: '400',
+    fontSize: fonts._16,
+    textAlign: 'center',
+    color: LIGHTGREY,
   },
 });
 

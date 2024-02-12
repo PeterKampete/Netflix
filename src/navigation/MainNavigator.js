@@ -12,7 +12,6 @@ const MainNavigator = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName={paths.BOTTOMNAVIGATOR}
       >
         <Stack.Screen name={paths.SPLASH} component={Splash} />
         <Stack.Screen name={paths.ONBOARDING} component={Onboarding} />
@@ -34,10 +33,7 @@ const MainNavigator = () => {
           name={paths.BOTTOMNAVIGATOR}
           component={BottomNavigator}
         />
-        <Stack.Screen
-          name={paths.MYLIST}
-          component={MyList}
-        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

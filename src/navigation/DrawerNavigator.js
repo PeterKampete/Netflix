@@ -6,7 +6,7 @@ import { DEVICE_WIDTH } from '../constants/sizes';
 import { LIGHTGREY, MEDIUMGREY } from '../constants/colors';
 import { Ionicons, EvilIcons, MaterialIcons } from '@expo/vector-icons';
 import SearchStack from './stacks/SearchStack';
-import { Movies, MyList } from '../screens';
+import { Categories, Movies, Music, MyList } from '../screens';
 
 const Drawer = createDrawerNavigator();
 
@@ -21,7 +21,7 @@ const DrawerNavigator = () => {
           width: DEVICE_WIDTH * 0.8,
           borderTopRightRadius: 40,
           borderBottomRightRadius: 40,
-          zIndex: 1
+          zIndex: 1,
         },
         drawerItemStyle: {
           borderRadius: 0,
@@ -81,7 +81,7 @@ const DrawerNavigator = () => {
             />
           ),
         }}
-        component={Movies}
+        component={Categories}
       />
       <Drawer.Screen
         name={paths.MYLIST}
@@ -106,6 +106,20 @@ const DrawerNavigator = () => {
           ),
         }}
         component={MyList}
+      />
+      <Drawer.Screen
+        name={paths.MUSIC}
+        options={{
+          title: 'Music',
+          drawerIcon: ({ color, size }) => (
+            <MaterialIcons
+              name='library-music'
+              size={size ? size : 24}
+              color={color}
+            />
+          ),
+        }}
+        component={Music}
       />
     </Drawer.Navigator>
   );
