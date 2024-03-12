@@ -8,6 +8,7 @@ import { Ionicons, EvilIcons, MaterialIcons } from '@expo/vector-icons';
 import SearchStack from './stacks/SearchStack';
 import { Categories, Movies, Music, MyList } from '../screens';
 import BottomNavigator from './BottomNavigator';
+import MusicStack from './stacks/MusicStack';
 
 const Drawer = createDrawerNavigator();
 
@@ -99,7 +100,7 @@ const DrawerNavigator = () => {
         component={MyList}
       />
       <Drawer.Screen
-        name={paths.MUSIC}
+        name={paths.MUSICSTACK}
         options={{
           title: 'Music',
           drawerIcon: ({ color, size }) => (
@@ -110,7 +111,7 @@ const DrawerNavigator = () => {
             />
           ),
         }}
-        component={Music}
+        component={MusicStack}
       />
     </Drawer.Navigator>
   );

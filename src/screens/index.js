@@ -15,6 +15,7 @@ import Movies from './movies/Movies.screen';
 import Help from './help/Help.screen';
 import Favorites from './favorites/Favorites.screen';
 import Music from './music/Music.screen';
+import MusicDetail from './music-detail/MusicDetail.screen';
 
 export {
   Splash,
@@ -34,4 +35,5 @@ export {
   Help,
   Favorites,
   Music,
+  MusicDetail,
 };

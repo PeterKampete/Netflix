@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 24,
     paddingTop: 22,
-    backgroundColor: "#fff"
+    backgroundColor: '#fff',
   },
   coverContainer: {
     shadowColor: '#000',
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 
     elevation: 9,
     width: DEVICE_WIDTH * 0.9,
-    height: DEVICE_HEIGHT * 0.3,
+    height: DEVICE_HEIGHT * 0.4,
     borderRadius: 16,
     marginBottom: DEVICE_HEIGHT * 0.03,
   },
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: fonts._24,
     color: '#000',
-    fontWeight: '500'
+    fontWeight: '500',
   },
   artist: {
     color: GREY,
