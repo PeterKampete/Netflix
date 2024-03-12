@@ -2,17 +2,16 @@ import React from 'react';
 import {
   AnimatedTabBarNavigator,
   DotSize,
-  TabButtonLayout,
   TabElementDisplayOptions,
 } from 'react-native-animated-nav-tab-bar';
 import { Ionicons } from '@expo/vector-icons';
-import DrawerNavigator from './DrawerNavigator';
-import { DARKGREY, GREY, LIGHTGREY, RED } from '../constants/colors';
+import {RED } from '../constants/colors';
 import { paths } from './paths';
 import SearchStack from './stacks/SearchStack';
 import DiscoverStack from './stacks/DiscoverStack';
 import DownloadsStack from './stacks/DownloadsStack';
 import ProfileStack from './stacks/ProfileStack';
+import { Home } from '../screens';
 
 const Tabs = AnimatedTabBarNavigator();
 
@@ -33,12 +32,10 @@ const BottomNavigator = () => {
         // inactiveTintColor: GREY,
         activeBackgroundColor: RED,
       }}
-      initialRouteName={paths.DRAWERNAVIGATOR}
-      // backBehavior='initialRoute'
     >
       <Tabs.Screen
-        name={paths.DRAWERNAVIGATOR}
-        component={DrawerNavigator}
+        name={paths.HOME}
+        component={Home}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ focused, color, size }) => (

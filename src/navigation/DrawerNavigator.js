@@ -7,6 +7,7 @@ import { LIGHTGREY, MEDIUMGREY } from '../constants/colors';
 import { Ionicons, EvilIcons, MaterialIcons } from '@expo/vector-icons';
 import SearchStack from './stacks/SearchStack';
 import { Categories, Movies, Music, MyList } from '../screens';
+import BottomNavigator from './BottomNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -40,24 +41,14 @@ const DrawerNavigator = () => {
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
       <Drawer.Screen
-        name={paths.HOMESTACK}
+        name={paths.BOTTOMNAVIGATOR}
         options={{
           title: 'Home',
           drawerIcon: ({ color, size }) => (
             <Ionicons name='home' size={size ? size : 24} color={color} />
           ),
         }}
-        component={HomeStack}
-      />
-      <Drawer.Screen
-        name={paths.SEARCHSTACK}
-        options={{
-          title: 'Search',
-          drawerIcon: ({ color, size }) => (
-            <Ionicons name='search' size={size ? size : 24} color={color} />
-          ),
-        }}
-        component={SearchStack}
+        component={BottomNavigator}
       />
       <Drawer.Screen
         name={paths.MOVIES}

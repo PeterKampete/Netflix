@@ -68,7 +68,7 @@ const UserProfiles = ({ navigation }) => {
                 isActive={item.isActive}
                 image={item.image}
                 width='47%'
-                onPress={() => navigation.navigate(paths.BOTTOMNAVIGATOR)}
+                onPress={() => navigation.navigate(paths.DRAWERNAVIGATOR)}
               />
             )}
           />

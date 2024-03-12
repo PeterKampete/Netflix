@@ -1,5 +1,5 @@
 import { Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import styles from './Home.styles';
 import { LIGHTGREY } from '../../constants/colors';
 import { posters } from '../../constants/dummy_data/posters';
@@ -13,15 +13,13 @@ import { genres } from '../../constants/dummy_data/genres';
 import { fonts } from '../../constants/fonts';
 import SwipeModal from '@birdwingo/react-native-swipe-modal';
 import { useGetMoviesQuery } from '../../redux/api/moviesSlice';
-import axios from 'axios';
-import { TMDB_API_ACCESS_TOKEN } from '@env';
 
 const Home = ({ navigation }) => {
   const modalRef = useRef(null);
   const showModal = () => modalRef.current?.show();
 
-  const { data, error, isLoading, refetch } = useGetMoviesQuery();
-  console.log('dta', data?.backdrop_path);
+  // const { data, error, isLoading, refetch } = useGetMoviesQuery();
+  // console.log('dta', data?.backdrop_path);
 
   return (
     <View style={styles.container}>
